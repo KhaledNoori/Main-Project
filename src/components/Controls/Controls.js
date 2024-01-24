@@ -15,7 +15,9 @@ const Controls = (props) => {
    return <Builder
     key={item.title} 
     title={item.title}
-     add={() => props.productAdd(item.type)}/>
+     add={() => props.productAdd(item.type)}
+     remove={ () => props.productRemove(item.type)}
+     />
     })}
   </div>;
 };

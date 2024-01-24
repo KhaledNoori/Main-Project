@@ -34,10 +34,26 @@ class Shopping extends React.Component {
     console.log('Add Product');
   }
 
+  removeProductHandler = (type) =>{
+    const prevcount = this.state.products[type];
+    const updateCount = prevcount - 1;
+    const updtateProducts = {
+      ...this.state.products,
+    }
+    updtateProducts[type] = updateCount;
+    const proceSub = prices[type];
+    const prevPrice = this.state.totalPrice;
+    const newPrice = prevPrice - proceSub;
+    this.setState({ totalPrice: newPrice, products: updtateProducts});
+    console.log('Remove Product');
+  }
+
   render() {
     return (
       <Wrapper>
-        <Controls productAdd={this.addProductHandler} />
+        <Controls productAdd={this.addProductHandler}
+            productRemove={this.removeProductHandler}
+        />
       </Wrapper>
     );
   }
