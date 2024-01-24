@@ -1,12 +1,20 @@
-import React from "react"
-import './Controls'
-const Controls = (props) =>{
+import React from "react";
 
-    return(
-  <div className="controls">
+import Builder from './Builder/Builder'
+import "./Controls.css";
 
-  </div>
-    )
-}
+const products = [
+  {title:'product 1', type:'product1'},
+  {title:'product 2', type:'product2'},
+  {title:'product 3', type:'product3'},
+  {title:'product 4', type:'product4'},
+]
+const Controls = (props) => {
+  return <div className="controls">
+    {products.map((item) =>{
+   return <Builder key={item.title} title={item.title} />
+    })}
+  </div>;
+};
 
-export default Controls
+export default Controls;
