@@ -31,7 +31,7 @@ class Shopping extends React.Component {
     const prevPrice = this.state.totalPrice;
     const newPrice = prevPrice + proceAdd;
     this.setState({ totalPrice: newPrice, products: updtateProducts});
-    console.log('Add Product');
+
   }
 
   removeProductHandler = (type) =>{
@@ -45,14 +45,17 @@ class Shopping extends React.Component {
     const prevPrice = this.state.totalPrice;
     const newPrice = prevPrice - proceSub;
     this.setState({ totalPrice: newPrice, products: updtateProducts});
-    console.log('Remove Product');
+   
   }
+
+ 
 
   render() {
     return (
       <Wrapper>
         <Controls productAdd={this.addProductHandler}
             productRemove={this.removeProductHandler}
+            price={ this.state.totalPrice}
         />
       </Wrapper>
     );

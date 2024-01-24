@@ -11,6 +11,9 @@ const products = [
 ]
 const Controls = (props) => {
   return <div className="controls">
+    <div>
+      <p>Total Price: {props.price} </p>
+    </div>
     {products.map((item) =>{
    return <Builder
     key={item.title} 
